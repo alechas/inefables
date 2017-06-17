@@ -1,0 +1,7 @@
+<div class="row">&
+<div class="large-3 columns">&
+<div class="panel"data-animate-scroll='{"x": "-100","y": "0", "alpha": "0", "duration": ".5"}'>&
+<h5>Panel Title</h5>&
+<p>This is a three columns grid panel with an arbitrary height.</p>&
+</div>&
+</div>&
