@@ -54,20 +54,20 @@
   <div class="w3-bar w3-black w3-card-2">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right w3-hover-black " href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <p class="w3-bar-item w3-padding-large w3-hover-black"  style="width:20%">INEFABLES!</p>
-    <a href="#biografia" class="w3-bar-item w3-button w3-padding-large w3-hide-small" style='width:20%'>Biografía</a>
-    <a href="#shows" class="w3-bar-item w3-button w3-padding-large w3-hide-small" style='width:20%'>Shows</a>
-    <a href="#galeria" class="w3-bar-item w3-button w3-padding-large w3-hide-small" style='width:20%'>Galeria</a>
-    <a href="#contacto" class="w3-bar-item w3-button w3-padding-large w3-hide-small" style='width:20%'>Contácto</a>
+    <a href="#biografia" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-black" style='width:20%'>Biografía</a>
+    <a href="#shows" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-black" style='width:20%'>Shows</a>
+    <a href="#galeria" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-black" style='width:20%'>Galeria</a>
+    <a href="#contacto" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-black" style='width:20%'>Contácto</a>
     <!-- <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a> -->
   </div>
 </div>
 
 <!-- Navbar on small screens -->
 <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px" onclick="myFunction()">
-  <a href="#biografia" class="w3-bar-item w3-button w3-padding-large" font-size:100%;">Biografia</a>
-  <a href="#shows" class="w3-bar-item w3-button w3-padding-large" font-size:100%;">Shows</a>
-  <a href="#galeria" class="w3-bar-item w3-button w3-padding-large" font-size:100%;">Galeria</a>
-  <a href="#contacto" class="w3-bar-item w3-button w3-padding-large" font-size:100%;">Contácto</a>
+  <a href="#biografia" class="w3-bar-item w3-button w3-padding-large w3-hover-black" font-size:100%;">Biografia</a>
+  <a href="#shows" class="w3-bar-item w3-button w3-padding-large w3-hover-black" font-size:100%;">Shows</a>
+  <a href="#galeria" class="w3-bar-item w3-button w3-padding-large w3-hover-black" font-size:100%;">Galeria</a>
+  <a href="#contacto" class="w3-bar-item w3-button w3-padding-large w3-hover-black" font-size:100%;">Contácto</a>
 </div>
 </head>
 
@@ -78,6 +78,8 @@
 <!-- Cargar secciones -->
 
 <div id="Cuerpo" onclick="myFunctionBody()" class="full" align="center">
+<div id="biografia">
+<br><br>
 <div  data-animate-scroll='{"alpha": "0", 
                     "duration": "2.5",
                     "rotationX":"20",
@@ -88,6 +90,7 @@
       require_once"/home/u506486065/public_html/php/gestor.php";
       Gestor::CargarSecciones();
     ?>
+</div>
 </div>
 
 <div class="full" id='shows'>
@@ -232,6 +235,15 @@
 </div>
 
 <!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge" id="contacto">
+  <i href="https://www.facebook.com/InefablesRock/?fref=ts" target="_blank"  class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i href="https://twitter.com/MusicaInefables" target="_blank" class="fa fa-twitter w3-hover-opacity"></i>
+  <p class="w3-medium">(02224) 472-616 / (011) 15 5742-0222</p>
+  <p class="w3-medium">inefables.rock@gmail.com</p>
+  <p class="w3-medium">Inefables Música</p>
+</footer>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/js/foundation.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
