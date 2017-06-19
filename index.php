@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+<html class="no-js" lang="es" >
 <head>
-<meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Animate Scroll Plugin | Demo</title>
+
+<title>Inefables Demo</title>
 <meta name="description" content="animate-scroll demo page"/>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/css/foundation.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
+
+<link href="https://fonts.googleapis.com/css?family=Lilita+One" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Kelly+Slab" rel="stylesheet">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
@@ -19,14 +23,37 @@
              border-collapse:collapse;  
              margin: 20px;
           }
+    .topFont
+    {
+    font-style: impact;
+    }
+    p {
+    font-family: 'Lilita One', cursive;
+    font-size: 200%;
+    font-style: italic;
+    }
+    a {
+    font-family: 'Lilita One', cursive;
+    font-size: 200%;
+    background-color: black;
+    }
+    h5 {
+    font-family: 'Lilita One', cursive;
+    font-size: 200%;
+    }
+    h1 {
+    font-family: 'Lilita One', cursive;
+    font-size: 300%;
+    }
+
 </style>
 
 
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card-2">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <p class="w3-bar-item w3-padding-large w3-hover-black"  style='width:20%'>INEFABLES</p>
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right w3-hover-black " href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <p class="w3-bar-item w3-padding-large w3-hover-black"  style="width:20%">INEFABLES!</p>
     <a href="#biografia" class="w3-bar-item w3-button w3-padding-large w3-hide-small" style='width:20%'>Biografía</a>
     <a href="#shows" class="w3-bar-item w3-button w3-padding-large w3-hide-small" style='width:20%'>Shows</a>
     <a href="#galeria" class="w3-bar-item w3-button w3-padding-large w3-hide-small" style='width:20%'>Galeria</a>
@@ -37,111 +64,79 @@
 
 <!-- Navbar on small screens -->
 <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px" onclick="myFunction()">
-  <a href="#biografia" class="w3-bar-item w3-button w3-padding-large" style="font-family:mistral; font-size:100%;">Biografia</a>
-  <a href="#shows" class="w3-bar-item w3-button w3-padding-large" style="font-family:mistral; font-size:100%;">Shows</a>
-  <a href="#galeria" class="w3-bar-item w3-button w3-padding-large" style="font-family:mistral; font-size:100%;">Galeria</a>
-  <a href="#contacto" class="w3-bar-item w3-button w3-padding-large" style="font-family:mistral; font-size:100%;">Contácto</a>
+  <a href="#biografia" class="w3-bar-item w3-button w3-padding-large" font-size:100%;">Biografia</a>
+  <a href="#shows" class="w3-bar-item w3-button w3-padding-large" font-size:100%;">Shows</a>
+  <a href="#galeria" class="w3-bar-item w3-button w3-padding-large" font-size:100%;">Galeria</a>
+  <a href="#contacto" class="w3-bar-item w3-button w3-padding-large" font-size:100%;">Contácto</a>
 </div>
 </head>
 
+<div  class="full" align="center">
+  <br><br><br><br>
+  <img src="imagenes/top.jpg"/>
+</div>
 <!-- Cargar secciones -->
 
 <div id="Cuerpo" onclick="myFunctionBody()" class="full" align="center">
-<br><br><br>
+<div  data-animate-scroll='{"alpha": "0", 
+                    "duration": "2.5",
+                    "rotationX":"20",
+                    "z":"-30"}'>
+
     <?php 
       //require_once"php\gestor.php";
       require_once"/home/u506486065/public_html/php/gestor.php";
       Gestor::CargarSecciones();
     ?>
-<br>
 </div>
 
-<div class="full">
+<div class="full" id='shows'>
+<br><br><br>
 
-<h1 align="center" id='shows'>Próximos Shows! </h1>
+<h1 align="center">Próximos Shows! </h1>
 
 <div class="row">
-
-<div class="panel"data-animate-scroll='{"x": "-100","y": "0", "alpha": "0", "duration": ".5"}'>
-<h5>Panel Title</h5>
-<p>This is a three columns grid panel with an arbitrary height.</p>
+<div class="panel"data-animate-scroll='{"x": "-100","y": "0", "alpha": "0", "duration": "1.5"}'>
+<h5>Mana Bar - 28 Junio</h5>
+<p>11PM<br>Entrada $50</p>
+<img src="imagenes/manabar.jpg"/>
 </div>
-
-</div>
-
-
-<div class="row">
-
-<div class="panel"data-animate-scroll='{"x": "-100","y": "0", "alpha": "0", "duration": ".5"}'>
-<h5>Panel Title</h5>
-<p>This is a three columns grid panel with an arbitrary height.</p>
-</div>
-
 </div>
 
 
 <div class="row">
-
-<div class="panel"data-animate-scroll='{"x": "-100","y": "0", "alpha": "0", "duration": ".5"}'>
-<h5>Panel Title</h5>
-<p>This is a three columns grid panel with an arbitrary height.</p>
+<div class="panel"data-animate-scroll='{"x": "-100","y": "0", "alpha": "0", "duration": "1.5"}'>
+<h5>Marcopollo - 23 Julio</h5>
+<p>11PM<br>Entrada $50</p>
+<img src="imagenes/marcopollobar.jpg"/>
 </div>
-
-</div>
-
-
-<div class="row">
-
-<div class="panel"data-animate-scroll='{"x": "-100","y": "0", "alpha": "0", "duration": ".5"}'>
-<h5>Panel Title</h5>
-<p>This is a three columns grid panel with an arbitrary height.</p>
-</div>
-
 </div>
 
 
 <div class="row">
-
-<div class="panel"data-animate-scroll='{"x": "-100","y": "0", "alpha": "0", "duration": ".5"}'>
-<h5>Panel Title</h5>
-<p>This is a three columns grid panel with an arbitrary height.</p>
+<div class="panel"data-animate-scroll='{"x": "-100","y": "0", "alpha": "0", "duration": "1.5"}'>
+<h5>Auditorio Sur - 13 Octubre</h5>
+<p>11PM<br>Entrada $50</p>
+<img src="imagenes/auditoriosur.jpg"/>
 </div>
-
-</div>
-
-
-<div class="row">
-
-<div class="panel"data-animate-scroll='{"x": "-100","y": "0", "alpha": "0", "duration": ".5"}'>
-<h5>Panel Title</h5>
-<p>This is a three columns grid panel with an arbitrary height.</p>
-</div>
-
 </div>
 
 
 <div class="row">
-
-<div class="panel"data-animate-scroll='{"x": "-100","y": "0", "alpha": "0", "duration": ".5"}'>
-<h5>Panel Title</h5>
-<p>This is a three columns grid panel with an arbitrary height.</p>
+<div class="panel"data-animate-scroll='{"x": "-100","y": "0", "alpha": "0", "duration": "1.5"}'>
+<h5 align="center">Luna Park - 1 Diciembre</h5>
+<p align="center">11PM<br>Entrada $50</p>
+<img src="imagenes/lunapark.jpg"/>
+</div>
 </div>
 
 </div>
 
-
-<div class="row">
-
-<div class="panel"data-animate-scroll='{"x": "-100","y": "0", "alpha": "0", "duration": ".5"}'>
-<h5>Panel Title</h5>
-<p>This is a three columns grid panel with an arbitrary height.</p>
-</div>
-
-</div>
-
-<div class="row">
+<div class="row" id='galeria'>
+<br><br><br><br><br>
 <div class="large-6 columns">
 <div class="panel">
+
 <h5 data-animate-scroll='{"x": "-20", 
                     "alpha": "0", 
                     "duration": "1.5"}'>Galeria</h5>
@@ -150,11 +145,12 @@
                     "duration": "1.5"}'><img src="imagenes/img1.png"/></p>
 </div>
 </div>
-<div class="large-1 columns">
-<div class="panel" data-animate-scroll='{"x": "-300", 
-                    "y": "-200", 
-                    "scaleX": "0.85",
-                    "scaleY": "0.85", 
+
+<div class="large-6 columns">
+<div class="panel" data-animate-scroll='{"x": "-30", 
+                    "y": "-20", 
+                    "scaleX": "1",
+                    "scaleY": "1", 
                     "alpha": "0", 
                     "duration": "2",
                     "rotationY":"720",
@@ -166,7 +162,7 @@
 </p>
 </div>
 </div>
-<div class="large-1 columns">
+<div class="large-6 columns">
 <div class="panel" data-animate-scroll='{"x": "-300", 
                     "y": "-200", 
                     "scaleX": "0.85",
@@ -182,7 +178,7 @@
 </p>
 </div>
 </div>
-<div class="large-1 columns">
+<div class="large-6 columns">
 <div class="panel" data-animate-scroll='{"x": "-300", 
                     "y": "-200", 
                     "scaleX": "0.85",
@@ -198,7 +194,7 @@
 </p>
 </div>
 </div>
-<div class="large-1 columns">
+<div class="large-6 columns">
 <div class="panel" data-animate-scroll='{"x": "-300", 
                     "y": "-200", 
                     "scaleX": "0.85",
@@ -210,25 +206,31 @@
                     "rotation":"45",
                     "z":"-30"}'>
 <p>
-<img src="imagenes/img5.jpg"/>
+<img src="imagenes/img7.jpg"/>
 </p>
 </div>
 </div>
-<div class="large-4 columns">
-<div class="panel" data-animate-scroll='{"x": "100", 
-                    "y":"100",
-                    "rotation":"-25",
+<div class="large-6 columns">
+<div class="panel" data-animate-scroll='{"x": "-300", 
+                    "y": "-200", 
+                    "scaleX": "0.85",
+                    "scaleY": "0.85", 
                     "alpha": "0", 
-                    "duration": "1.5",
-                    "scaleX": "0",
-                    "scaleY": "0"}'>
-<img src="imagenes/img1.png"/>
-</div>
+                    "duration": "2",
+                    "rotationY":"720",
+                    "rotationX":"45",
+                    "rotation":"45",
+                    "z":"-30"}'>
+<p>
+<img src="imagenes/img8.jpg"/>
+</p>
 </div>
 </div>
 
+</div>
 
 </div>
+
 <!-- Footer -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/js/foundation.min.js"></script>
@@ -240,8 +242,6 @@
 <script>
       $(document).foundation();  
       $(document).animateScroll();
-    
-
       var doc = document.documentElement;
       doc.setAttribute('data-useragent', navigator.userAgent);
 

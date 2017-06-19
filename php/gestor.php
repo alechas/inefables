@@ -45,10 +45,11 @@
 		public static function SecBiografia()
 		{
 			echo "
-					<div align = 'center' style='background-color:#fb9fcd class='w3-container' id='biografia'>
+					<div align = 'center' style='background-color:#fb9fcd class='w3-container w3-center w3-animate-bottom' id='biografia'>
 					  <div class='w3-content' align = 'center'>
 					    <div align = 'center'>
-					      <div class='full' align = 'center'><br><h1>Biografía</h1> <br>";
+					      <div class='full' align = 'center'>  <br><br><br><br><h1>Biografía</h1> <br>
+					      	<b>";
 
 
 					    			$arr = array();
@@ -63,7 +64,7 @@
 
 									fclose($a);
 
-			echo "
+			echo "     </b>
 					      </div>
 					    </div>
 					  </div>
