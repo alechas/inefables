@@ -86,8 +86,8 @@
                     "z":"-30"}'>
 
     <?php 
-      //require_once"php\gestor.php";
-      require_once"/home/u506486065/public_html/php/gestor.php";
+      require_once"php\gestor.php";
+      //require_once"/home/u506486065/public_html/php/gestor.php";
       Gestor::CargarSecciones();
     ?>
 </div>
@@ -233,6 +233,9 @@
 </div>
 
 </div>
+
+<audio src="canc.mp3" controls="controls" type="audio/mpeg" preload="preload">
+</audio>
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge" id="contacto">
