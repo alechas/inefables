@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html class="no-js" lang="es" >
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
 <title>Inefables Demo</title>
-<meta name="description" content="animate-scroll demo page"/>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/css/foundation.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script type="text/javascript" src="FuncionesJS.js"></script>
 
 
 <link href="https://fonts.googleapis.com/css?family=Lilita+One" rel="stylesheet">
@@ -78,7 +78,7 @@
 <!-- Cargar secciones -->
 
 <div id="Cuerpo" onclick="myFunctionBody()" class="full" align="center">
-<div id="biografia">
+<div>
 <br><br>
 <div  data-animate-scroll='{"alpha": "0", 
                     "duration": "2.5",
