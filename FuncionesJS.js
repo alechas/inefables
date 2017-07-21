@@ -31,6 +31,60 @@ function CargarAdministrador()
       );
 }
 
+
+function BorrarFecha(id)
+{
+  var pagina = "nexo.php";
+
+    $.ajax(
+      {
+        type: 'POST',
+        url: pagina,
+        dataType: "text",
+        data: {queHago: "BorrarFecha" , id: id },
+        async: true
+      }
+      ).then( 
+        function(respuesta) 
+        { 
+
+          alert(respuesta);
+          location.href='Login.php';                    
+
+        }, 
+        function(respuesta) 
+        { 
+        }
+      );
+
+}
+
+function ModFecha( idFecha)
+{
+  var pagina = "nexo.php";
+
+    $.ajax(
+      {
+        type: 'POST',
+        url: pagina,
+        dataType: "text",
+        data: {queHago: "ModFecha" , id: idFecha },
+        async: true
+      }
+      ).then( 
+        function(respuesta) 
+        { 
+alert(respuesta);
+          location.href='Login.php';                    
+
+        }, 
+        function(respuesta) 
+        { 
+        }
+      );
+
+}
+
 function GuardarBiografia()
 {
   var pagina = "nexo.php";
@@ -66,6 +120,10 @@ function CargarFecha()
   var direccion = document.getElementById("direccion").value;
   var precio = document.getElementById("precio").value;
 
+
+  var file = document.getElementById('flayer').files;
+  //var filename = document.getElementById('id-input-file-2').files[0].name;      
+
     $.ajax(
       {
         type: 'POST',
@@ -77,13 +135,8 @@ function CargarFecha()
       ).then( 
         function(respuesta) 
         { 
-            var file = document.getElementById('flayer').files[0];      
-            //var filename = document.getElementById('id-input-file-2').files[0].name;      
-            var blob = new Blob([file]);
-            var url  = URL.createObjectURL(blob);
 
-            $(this).attr({ 'download': respuesta, 'href': url});  
-            filename = "";
+
         }, 
         function(respuesta) 
         { 
@@ -113,6 +166,33 @@ function Login()
         }, 
       function(respuesta) { 
                             alert("Error de logueo");
+
+                          }
+    );
+          location.href='Login.php';
+
+}
+
+function BorrarImg(indice)
+{
+  var pagina = "nexo.php";
+
+    $.ajax({
+        type: 'POST',
+        url: pagina,
+        dataType: "text",
+        data: {queHago: "BorrarImg" , cont: indice },
+        async: true
+        })
+      .then( 
+        function(respuesta) 
+        {
+          alert("Se borro imagen");
+          location.href='Login.php';          
+
+        }, 
+      function(respuesta) { 
+                            alert("Error al borrar la imagen");
 
                           }
     );

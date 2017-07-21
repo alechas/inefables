@@ -1,0 +1,205 @@
+body {
+  background-color: #D2D5D6;
+  font-family: "Ubuntu", sans-serif;
+  color: #3A3543;
+}
+
+.player {
+  margin: 20px auto;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 275px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+.player .bottom {
+  background-color: #FFF;
+  margin-top: -2px;
+}
+.player .timer {
+  display: block;
+  width: 100%;
+}
+.player .timer .bar {
+  background-color: #dfe1e2;
+  width: 100%;
+  height: 2px;
+}
+.player .timer .bar .fill {
+  background-color: #FF2772;
+  width: 35%;
+  height: 2px;
+}
+.player .timer .times {
+  display: flex;
+}
+.player .timer .elapsed, .player .timer .length {
+  font-size: 10px;
+  flex: 1 1 auto;
+  padding: 5px;
+}
+.player .timer .length {
+  text-align: right;
+}
+.player .controls {
+  padding: 5px 15px 20px 15px;
+  display: flex;
+}
+.player .controls > div {
+  flex: 1 1 auto;
+}
+.player .controls .playing, .player .controls .paused {
+  flex: 0 0 auto;
+  cursor: pointer;
+  position: relative;
+  background-color: #3A3543;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+}
+.player .controls .playing:before, .player .controls .playing:after, .player .controls .paused:before, .player .controls .paused:after {
+  content: " ";
+  position: absolute;
+}
+.player .controls .playing:before, .player .controls .playing:after {
+  background-color: #FFF;
+  border-radius: 2px;
+  height: 16px;
+  width: 3px;
+}
+.player .controls .playing:before {
+  left: 13px;
+  top: 12px;
+}
+.player .controls .playing:after {
+  right: 13px;
+  top: 12px;
+}
+.player .controls .paused:after {
+  top: 10px;
+  left: 50%;
+  margin-left: -5.71429px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 15px;
+  border-color: transparent transparent transparent #FFF;
+}
+.player .controls .title {
+  margin-left: 10px;
+}
+.player .controls .title h1 {
+  font-size: 22px;
+  color: #6b627c;
+  margin-bottom: 2.5px;
+}
+.player .controls .title h2 {
+  font-size: 12px;
+  color: #b9b4c3;
+}
+.player .controls .secondary {
+  text-align: right;
+}
+.player .controls .secondary > div {
+  display: inline-block;
+}
+.player .controls .secondary .rewind:before, .player .controls .secondary .rewind:after, .player .controls .secondary .forward:before, .player .controls .secondary .forward:after, .player .controls .secondary .right:before, .player .controls .secondary .right:after, .player .controls .secondary .left:before, .player .controls .secondary .left:after {
+  content: " ";
+  position: absolute;
+}
+.player .controls .secondary .rewind, .player .controls .secondary .forward, .player .controls .secondary .repeat {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.player .controls .secondary .rewind:hover, .player .controls .secondary .forward:hover, .player .controls .secondary .repeat:hover {
+  opacity: 1;
+}
+.player .controls .secondary .rewind {
+  position: relative;
+  background-color: #3A3543;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+}
+.player .controls .secondary .rewind:after {
+  top: 6.66667px;
+  left: 4px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 3.33333px 5px 3.33333px 0;
+  border-color: transparent #FFF transparent transparent;
+}
+.player .controls .secondary .rewind:before {
+  top: 6.66667px;
+  left: 9.09091px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 3.33333px 5px 3.33333px 0;
+  border-color: transparent #FFF transparent transparent;
+}
+.player .controls .secondary .forward {
+  position: relative;
+  background-color: #3A3543;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+}
+.player .controls .secondary .forward:after {
+  top: 6.66667px;
+  left: 11.11111px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 3.33333px 0 3.33333px 5px;
+  border-color: transparent transparent transparent #FFF;
+}
+.player .controls .secondary .forward:before {
+  top: 6.66667px;
+  left: 6.06061px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 3.33333px 0 3.33333px 5px;
+  border-color: transparent transparent transparent #FFF;
+}
+.player .controls .secondary .repeat {
+  position: relative;
+  border: 2px solid #3A3543;
+  width: 15px;
+  height: 7.5px;
+  margin: 5px 0 5px 0;
+  border-radius: 2px;
+}
+.player .controls .secondary .repeat .right:before {
+  width: 5px;
+  height: 2px;
+  top: -2px;
+  right: 2px;
+  background-color: #FFF;
+}
+.player .controls .secondary .repeat .right:after {
+  top: -4px;
+  right: 4px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 3.33333px 0 3.33333px 5px;
+  border-color: transparent transparent transparent #3A3543;
+}
+.player .controls .secondary .repeat .left:before {
+  width: 5px;
+  height: 2px;
+  bottom: -2px;
+  right: 8px;
+  background-color: #FFF;
+}
+.player .controls .secondary .repeat .left:after {
+  bottom: -4px;
+  right: 6px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 3.33333px 5px 3.33333px 0;
+  border-color: transparent #3A3543 transparent transparent;
+}

@@ -1,0 +1,27 @@
+.player
+  %img.album-art{'src'=>'http://bobmarley.cdn.junip.com/wp-content/uploads/2013/09/HERO-tourhistory71.jpg', 'width'=>'275','height'=>'125'}
+  .bottom
+    .timer
+      .bar
+        .fill
+      .times
+        .elapsed
+          1:37
+        .length
+          3:52
+    .controls
+      .play.playing
+      .title
+        %h1
+          Is This Love
+        %h2
+          Bob Marley
+      .secondary
+        .repeat
+          .right
+          .left
+        .rewind
+        .forward
+  %audio
+    %source{'src'=>'https://kolber.github.io/audiojs/demos/mp3/juicy.mp3','artist'=>'Biggie Smalls','album-art'=>'http://rankerreview.com/wp-content/uploads/2014/10/Biggie-Smalls.jpg'}
+    %source{'src'=>'https://kolber.github.io/audiojs/demos/mp3/01-dead-wrong-intro.mp3','artist'=>'Biggie Smalls','album-art'=>'http://rankerreview.com/wp-content/uploads/2014/10/Biggie-Smalls.jpg'}

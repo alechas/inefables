@@ -1,0 +1,206 @@
+$grey: #D2D5D6;
+$grey-light: #AAACB1;
+$white: #FFF;
+$pink: #FF2772;
+$purple: #3A3543;
+
+$font: 'Ubuntu', sans-serif;
+
+@mixin arrow($direction, $size, $color){
+    width: 0;
+    height: 0;
+    border-style: solid;
+    @if $direction == left {
+            border-width: $size ($size + $size/2) $size 0;
+      border-color: transparent $color transparent transparent;
+    } @else {
+      border-width: $size 0 $size ($size + $size/2);
+      border-color: transparent transparent transparent $color;
+    }
+}
+
+@mixin icon($size) {
+  position: relative;
+  background-color: $purple;
+  width: $size;
+  height: $size;
+  border-radius: $size;
+}
+
+body {
+  background-color: $grey;
+  font-family: $font;
+  color: $purple;
+}
+
+.player {
+  margin: 20px auto;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 275px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+  .bottom {
+    background-color: $white;
+    margin-top: -2px;
+  }
+  .timer {
+    display: block;
+    width: 100%;
+    .bar {
+      background-color: lighten($grey, 5%);
+      width: 100%;
+      height: 2px;
+      .fill {
+        background-color: $pink;
+        width: 35%;
+        height: 2px;
+      }
+    }
+    .times {
+      display: flex;
+    }
+    .elapsed,.length {
+      font-size: 10px;
+      flex: 1 1 auto;
+      padding: 5px;
+    }
+    .length {
+      text-align: right;
+    }
+  }
+  .controls {
+    padding: 5px 15px 20px 15px;
+    display: flex;
+    > div {
+      flex: 1 1 auto;
+    }
+    $playpause-size: 40px;
+    .playing,.paused {
+      flex: 0 0 auto;
+      cursor: pointer;
+      @include icon($playpause-size);
+      &:before,&:after {
+        content: " ";
+        position: absolute;
+      }
+    }
+    .playing {
+      &:before,&:after {
+        background-color: $white;
+        border-radius: 2px;
+        height: 16px;
+        width: 3px;
+      }
+      &:before {
+        left: 13px;
+        top: 12px;
+      }
+      &:after {
+        right: 13px;
+        top: 12px;
+      }
+    }
+    .paused {
+      &:after {
+        top: $playpause-size/4;
+        left: 50%;
+        margin-left: -$playpause-size/7;
+        @include arrow('right',$playpause-size/4, $white);
+      }
+    }
+    .title {
+      margin-left: 10px;
+      h1 {
+        font-size: 22px;
+        color: lighten($purple, 20%);
+        margin-bottom: 2.5px;
+      }
+      h2 {
+        font-size: 12px;
+        color: lighten($purple, 50%);
+      }
+    }
+    .secondary {
+      $secondary-size: 20px;
+      text-align: right;
+      > div {
+        display: inline-block;
+      }
+      .rewind,.forward,.right,.left {
+        &:before,&:after {
+          content: " ";
+          position: absolute;
+        }
+      }
+      .rewind,.forward,.repeat {
+        opacity: 0.5;
+        cursor: pointer;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      .rewind {
+        @include icon($secondary-size);
+        &:after {
+          top: $secondary-size/3;
+          left: $secondary-size/5;
+          @include arrow('left',$secondary-size/6,$white);
+        }
+        &:before {
+          top: $secondary-size/3;
+          left: $secondary-size/2.2;
+          @include arrow('left',$secondary-size/6,$white);
+        }
+      }
+      .forward {
+        @include icon($secondary-size);
+        &:after {
+          top: $secondary-size/3;
+          left: $secondary-size/1.8;
+          @include arrow('right',$secondary-size/6,$white);
+        }
+        &:before {
+          top: $secondary-size/3;
+          left: $secondary-size/3.3;
+          @include arrow('right',$secondary-size/6,$white);
+        }
+      }
+      .repeat {
+        position: relative;
+        border: 2px solid $purple;
+        width: 15px;
+        height: 7.5px;
+        margin: 5px 0 5px 0;
+        border-radius: 2px;
+        .right {
+          &:before {
+            width: 5px;
+            height: 2px;
+            top: -2px;
+            right: 2px;
+            background-color: $white;
+          }
+          &:after {
+            top: -4px;
+            right: 4px;
+            @include arrow('right',$secondary-size/6,$purple);
+          }
+        }
+        .left {
+          &:before {
+            width: 5px;
+            height: 2px;
+            bottom: -2px;
+            right: 8px;
+            background-color: $white;
+          }
+          &:after {
+            bottom: -4px;
+            right: 6px;
+            @include arrow('left',$secondary-size/6,$purple);
+          }
+        }
+      }
+    }
+  }
+}

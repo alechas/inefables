@@ -1,0 +1,101 @@
+@number-of-links: 4;
+
+@color-bg: #607D8B;
+@color-primary: #FFF;
+@color-secondary: #CFD8DC;
+
+nav {
+	position: fixed;
+	top: 100px;
+	left: 0;
+	a {
+		display: block;
+		text-align: center;
+		color: @color-primary;
+		padding: 20px;
+		font-size: 40px;
+		margin-left: -200px;
+		width: 100px;
+		height: 100px;
+		transition-property: margin-left;
+    	transition-duration: 0.2s;
+    	transition-timing-function: ease;
+		&:hover {
+			color: @color-secondary;
+		}
+	}
+	.link-transition(@number-of-links);
+}
+
+#nav-toggle {
+	width: 100px;
+	height: 100px;
+	border: none;
+	background-color: rgba(0, 0, 0, 0);
+	font: inherit;
+	font-size: 40px;
+	color: @color-primary;
+	transition: transform 0.2s ease;
+	padding: 0;
+	&:after {
+		content: "\f0c9";
+		font-family: 'FontAwesome';
+	}
+	&:focus {
+		outline: none;
+	}
+	&:hover {
+		color: @color-secondary;
+	}
+}
+
+.nav-open {
+	nav a {
+		margin-left: 0;
+	}
+	#nav-toggle {
+		transform: rotate(-180deg);
+		&:after {
+			content: "\f00d";
+		}
+	}
+}
+
+.link-transition(@n, @i: 1) when (@i =< @n) {
+	a:nth-child(@{i}) {
+		transition-delay: unit((((@i / 10) * 2) - 0.2), s);
+  	}
+  .link-transition(@n, (@i + 1));
+}
+
+/* Base Style */
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:300);
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	overflow: hidden;
+	background-color: @color-bg;
+	font-family: 'Raleway', sans-serif;
+	color: @color-primary;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	h1 {
+		margin: 0;
+	}
+}

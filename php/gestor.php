@@ -48,12 +48,16 @@
 					<div align = 'center' style='background-color:#fb9fcd class='w3-container w3-center w3-animate-bottom' id='biografia2'>
 					  <div class='w3-content' align = 'center'>
 					    <div align = 'center'>
-					      <div class='full' align = 'center' id='biografia'> <br><h1>Biografía</h1> <br>
+					      <div class='full' align = 'center' id='biografia'> 
+					      				<img src='imagenes/biografia.png' height='50%' width='70%'>
+<br><br>
+ 
 					      	<b>";
 
 				$archivo = "./archivos/Biografia.txt";
 				$handle = fopen($archivo, "r"); // Abris el archivo
-				
+
+
 				while(! feof($handle))
 				  {
 				  echo fgets($handle). "<br />";

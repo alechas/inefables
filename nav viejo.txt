@@ -1,0 +1,19 @@
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card-2">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right w3-hover-black " href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <p class="w3-bar-item w3-padding-large w3-hover-black"  style="width:20%">INEFABLES!</p>
+    <a href="#biografia" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-black" style='width:25%'><img src='imagenes/biografia.png' height='20' width='1000'></a>
+    <a href="#shows" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-black" style='width:20%'>Shows</a>
+    <a href="#galeria" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-black" style='width:20%'>Galeria</a>
+    <a href="#contacto" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-black" style='width:20%'>Contácto</a>
+    <!-- <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a> -->
+  </div>
+</div>
+
+<!-- Navbar on small screens -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px" onclick="myFunction()">
+  <a href="#biografia" class="w3-bar-item w3-button w3-padding-large w3-hover-black" font-size:100%;">Biografia</a>
+  <a href="#shows" class="w3-bar-item w3-button w3-padding-large w3-hover-black" font-size:100%;">Shows</a>
+  <a href="#galeria" class="w3-bar-item w3-button w3-padding-large w3-hover-black" font-size:100%;">Galeria</a>
+  <a href="#contacto" class="w3-bar-item w3-button w3-padding-large w3-hover-black" font-size:100%;">Contácto</a>
+</div>

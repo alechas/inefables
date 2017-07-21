@@ -1,8 +1,8 @@
 
-<div align="center" style="align-content: center;  height: 10px; width: 50%; margin-left: 25%">
+<div align="center" style="align-content: center;  height: 10px; width: 80%; margin-left: 10%">
 <div>
 
-Biografía
+<p>Biografía</p>
 <textarea id = "txtbiografia" rows = "20" cols = "50">
 <?php
 		//Cargo la biografía
@@ -21,22 +21,62 @@ Biografía
 </div>
 
 <br>
-<div align="center">
+<div align="center" id="CargaFecha">
 
-Cargar fecha
-<input type="text" id="Lugar" placeholder= 'Lugar'>
-<input type="datetime-local" id="fecha">
-<input type="text" id="direccion" placeholder= 'Dirección'>
-<input type="number" id="precio" placeholder= 'Precio'>
+<p>Cargar fecha</p> <p id="fecha">
+<?php if (isset($_COOKIE['IdFechaMOD']))
+        echo $_COOKIE['IdFechaMOD'];
+?>
+</p>
+<form action="guardar.php" method="post" enctype="multipart/form-data">
 
-<input name="flayer" id="flayer" type="file" />
+<?php
+require_once"php/Fechas.php";
 
-<button onclick='CargarFecha()' class='w3-button w3-round w3-green w3-opacity w3-hover-opacity-off' style='padding:3px 50px'> Cargar </button><br>
+        $lugar = "";
+        $fecha = "";
+        $direccion = "";
+        $precio = "";
+
+
+      if (isset($_COOKIE['IdFechaMOD']))
+      {
+        //Obtengo fecha a modificar
+        //$fecha = Fechas::TraerUnafecha($_COOKIE['FechaMOD']);
+
+        //$fecM=str_replace(" ","T",$_COOKIE['FechaMOD']);
+
+        $lugar = "value = ".$_COOKIE['LugarMOD'];
+
+        $fecha = "value = ".str_replace(" ","T",$_COOKIE['FechaMOD']);
+
+        $direccion = "value = ".$_COOKIE['DireMOD'];
+
+        $precio = "value = ".$_COOKIE['PrecioMOD'];
+
+      }
+
+echo "
+<input type='text' id='lugar' placeholder= 'Lugar' name = 'lugar' $lugar>
+<input type='datetime-local' id='fecha' name='fecha' $fecha>
+<input type='text' id='direccion' placeholder= 'Dirección' name='direccion' $direccion>
+<input type='number' id='precio' placeholder= 'Precio' name='precio' $precio >
+
+<input type='file' name='fileImg' id='fileImg'>
+
+<br>
+<input type='submit' value='Cargar' name='submit'>
+"
+
+?>
+
+</form>
+
 </div>
 
 <br>
 
-Fechas
+<p>Fechas</p>
 
     <div class="w3-panel" align="center">
       <div class="w3-row-padding" style="text-align: center;">
@@ -59,19 +99,26 @@ Fechas
   <?php
   require_once "php\\fechas.php";
   $fechas = Fechas::TraerTodosLasFechas();
+  //var_dump($fechas);
   //Obtengo y muestro los materiales    
   foreach ($fechas as $fec){
+    
+    // $lugAux=str_replace(" ","&&",$fec->lugar);
+    // $fecAux=str_replace(" ","&&",$fec->fecha);
+    // $dirAux=str_replace(" ","&&",$fec->direccion);
 
-    $btnMod = "Fechas($fec->idFecha,'$fec->lugar',$fec->fecha,'$fec->direccion','$fec->precio')";
+    // $btnMod = "ModFechas($fec->idFecha,$lugAux,$fecAux,$dirAux,$fec->precio)";
+    //$btnMod = "ModFechas($fec->idFecha)";
+    
     echo  "<tr>
-            <td><i class='fa fa-user w3-text-blue w3-large'></i></td>
+            <td><img src='imagenes\Fechas\\$fec->idFecha.jpg' alt='Foto' height='84' width='84'></td>
             <td align='center'>$fec->idFecha</td>
             <td align='center'>$fec->lugar</td>
             <td align='center'>$fec->fecha</td>
             <td align='center'>$fec->direccion</td>
             <td align='center'>$fec->precio</td>
-            <td align='center'><button onclick='Borrar($fec->idFecha)' class='w3-button w3-round w3-red w3-hover-blue w3-opacity w3-hover-opacity-off' style='padding:3px 10px'>Eliminar</button>
-            <button onclick=$btnMod class='w3-button w3-round w3-green w3-opacity w3-hover-blue w3-hover-opacity-off' style='padding:3px 10px'>Modificar</button></td>
+            <td align='center'><button onclick='BorrarFecha($fec->idFecha)' class='w3-button w3-round w3-red w3-hover-blue w3-opacity w3-hover-opacity-off' style='padding:3px 10px'>Eliminar</button>
+            <button onclick='ModFecha($fec->idFecha)' class='w3-button w3-round w3-green w3-opacity w3-hover-blue w3-hover-opacity-off' style='padding:3px 10px'>Modificar</button></td>
           </tr>
           " ;
 
@@ -82,4 +129,50 @@ Fechas
         </div>
     </div>
 
+<p>Galeria</p>
+<div>
+<?php
+
+$directory="imagenes\Galeria";
+    $dirint = dir($directory);
+$cont = 0;
+    while (($archivo = $dirint->read()) !== false)
+    {
+      if($archivo == '.' || $archivo == '..')
+        continue;
+
+$imgf = $directory.'\\'.$archivo;
+    $cont++;
+$btn = "BorrarImg(".$cont.")";
+      echo "
+<div class='large-6 columns'>
+<div class='panel' data-animate-scroll='{'x': '-300', 
+                    'y': '-200', 
+                    'scaleX': '0.85',
+                    'scaleY': '0.85', 
+                    'alpha': '0', 
+                    'duration': '2',
+                    'rotationY':'720',
+                    'rotationX':'45',
+                    'rotation':'45',
+                    'z':'-30'}'>
+<p>
+<img src='$imgf'/>
+</p>
+<button onclick=$btn class='w3-button w3-round w3-red w3-hover-blue w3-opacity w3-hover-opacity-off' style='width: 100%'>Eliminar</button>
+</div>
+</div>";
+
+    }
+    $dirint->close();
+
+?>
+
+<form action="guardarGal.php" method="post" enctype="multipart/form-data">
+<input type='file' name='fileImg' id='fileImg'>
+<input type='submit' value='Cargar' name='submit'>
+
+</form>
+
+</div>
 </div>
