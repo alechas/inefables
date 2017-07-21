@@ -67,7 +67,7 @@
 
 </head>
 
-<body>
+<body onload="OnLoad()">
 <!-- Navbar -->
 <button id="nav-toggle" class="menu-fixed"></button>
 
@@ -86,6 +86,7 @@
 <!-- Cargar secciones -->
 
 <div id="Cuerpo" onclick="myFunctionBody()" class="full" align="center">
+
 <div>
 <br><br>
 
@@ -167,7 +168,6 @@ $imgf = $directory.'\\'.$archivo;
 <p>
 <img src='$imgf' class='animated bounce' />
 </p>
-</div>
 </div>";
 
     }
@@ -177,7 +177,6 @@ $imgf = $directory.'\\'.$archivo;
 
 </div>
 
-</div>
 
 <div id="escuchanos">
 <img src='imagenes/escuchanos.png' height='50%' width='70%'>
@@ -193,6 +192,8 @@ $imgf = $directory.'\\'.$archivo;
   <p class="w3-medium">(02224) 472-616 / (011) 15 5742-0222</p>
   <p class="w3-medium">inefables.rock@gmail.com</p>
   <p class="w3-medium">Inefables Música</p>
+</div>
+
 </div>
 
 </div>
@@ -241,7 +242,7 @@ function animationHover(element, animation){
 }
 function OnLoad() 
 {
-//     $("#container_player").load("1/index.html");
+     $("#container_player").load("reproductor.html");
 }
 
 </script>
