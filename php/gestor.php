@@ -48,8 +48,8 @@
 					<div align = 'center' style='background-color:#fb9fcd class='w3-container w3-center w3-animate-bottom' id='biografia2'>
 					  <div class='w3-content' align = 'center'>
 					    <div align = 'center'>
-					      <div class='full' align = 'center' id='biografia'> 
-					      				<img src='imagenes/biografia.png' height='50%' width='70%'>
+					      <div style='border-radius: 8px; width:80%' align = 'center' id='biografia'> 
+					      				<img src='imagenes/biografia.png' height='50%' width='70%' class=' animated infinite swing'>
 <br><br>
  
 					      	<b>";

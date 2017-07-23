@@ -67,7 +67,7 @@
 
 </head>
 
-<body onload="OnLoad()">
+<body onload="OnLoad()" class="body">
 <!-- Navbar -->
 <button id="nav-toggle" class="menu-fixed"></button>
 
@@ -80,12 +80,12 @@
 
 <div  class="full" align="center">
   <br><br><br><br>
-  <img src="imagenes/asset/Asset 2.png" height='30%' width='50%'/>
-  <img src="imagenes/asset/Asset 5.png" height='5%' width='15%'/>
+  <img src="imagenes/asset/Asset 2.png" height='30%' width='50%' class=" animated infinite pulse" />
+  <img src="imagenes/asset/Asset 5.png" height='5%' width='15%' class=" animated infinite pulse" style="animation-delay: 0.3s;"/>
 </div>
 <!-- Cargar secciones -->
 
-<div id="Cuerpo" onclick="myFunctionBody()" class="full" align="center">
+<div id="Cuerpo" onclick="myFunctionBody()" align="center" >
 
 <div>
 <br><br>
@@ -101,7 +101,7 @@
 <br><br><br><br>
 
 
-<img src='imagenes/shows.png' height='50%' width='70%'>
+<img src='imagenes/shows.png' height='50%' width='70%' class=" animated infinite shake">
 
   <?php
   require_once "php\\fechas.php";
@@ -128,30 +128,23 @@ echo "
 ?>
 </div>
 
-<img src='imagenes/galeria.png' height='50%' width='70%'>
-
 <div class="row" id='galeria'>
-<br><br><br><br><br>
-<div class="large-6 columns">
-<div class="panel">
+<br>
+<img src='imagenes/galeria.png' height='50%' width='70%' class=" animated infinite swing">
 
-<p data-animate-scroll='{"x": "20", 
-                    "alpha": "0", 
-                    "duration": "1.5"}'><img src="imagenes/img1.png"/></p>
-</div>
-</div>
+<br>
 
 <?php
 
   require_once "php\\fechas.php";
 // Collecto los efectos
 
-$efectos = Fechas::GetEfectos();
+//$efectos = Fechas::GetEfectos();
+    $size = array("80", "40", "50");
 
-
-$directory="imagenes\Galeria";
+    $directory="imagenes\Galeria";
     $dirint = dir($directory);
-$cont = 0;
+    $cont = 0;
     while (($archivo = $dirint->read()) !== false)
     {
       if($archivo == '.' || $archivo == '..')
@@ -162,37 +155,34 @@ $cont = 0;
 
 $imgf = $directory.'\\'.$archivo;
     $cont++;
-      echo "
-<div class='large-6 columns'>
 
-<p>
-<img src='$imgf' class='animated bounce' />
-</p>
-</div>";
+    $index_img = rand(0,2);
+    $size_img = $size[$index_img];
+    //echo $size_img;
+      echo "
+
+<img style='border-radius: 8px; width:$size_img%' data-animate-scroll='animated infinite rubberBand' src='$imgf'  />
+";
 
     }
     $dirint->close();
 ?>
 
-
 </div>
 
 
 <div id="escuchanos">
-<img src='imagenes/escuchanos.png' height='50%' width='70%'>
+<div class=" animated infinite pulse">
+<br>
+<img src='imagenes/escuchanos.png' height='50%' width='70%' class=" animated infinite rubberBand" style="margin-top: 15px margin-left: 15px" >
+</div>
 <br>
   <div id="container_player">
 
   </div>
-<
+
 <!-- Footer -->
-<div class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge" id="contacto">
-  <i href="https://www.facebook.com/InefablesRock/?fref=ts" target="_blank"  class="fa fa-facebook-official w3-hover-opacity"></i>
-  <i href="https://twitter.com/MusicaInefables" target="_blank" class="fa fa-twitter w3-hover-opacity"></i>
-  <p class="w3-medium">(02224) 472-616 / (011) 15 5742-0222</p>
-  <p class="w3-medium">inefables.rock@gmail.com</p>
-  <p class="w3-medium">Inefables Música</p>
-</div>
+
 
 </div>
 
