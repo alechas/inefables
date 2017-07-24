@@ -288,9 +288,9 @@ play.onclick = function () {
 audio.addEventListener("pause", function () {
     play.innerHTML = '<img class="pad" src="http://abarcarodriguez.com/lab/play.png" />';
     playing = false;
-        $("#art").removeClass("animated");
+    $("#art").removeClass("animated");
     $("#art").removeClass("infinite");
-    $("#art").removeClass("pulse"); 
+    $("#art").removeClass("tada"); 
 }, false);
 
 audio.addEventListener("playing", function () {
@@ -306,7 +306,7 @@ audio.addEventListener("playing", function () {
     //acordeon.removeClass('swing');
     $("#art").addClass("animated");
     $("#art").addClass("infinite");
-    $("#art").addClass("pulse");
+    $("#art").addClass("tada");
 
 }, false);
 next.addEventListener("click", nextTrack, false);
