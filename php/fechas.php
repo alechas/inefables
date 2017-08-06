@@ -9,6 +9,7 @@ class Fechas
 	public $fecha;
 	public $direccion;
 	public $precio;
+	public $descripcion;
 
 		public static function GetIdFecha()
 		{
@@ -37,7 +38,7 @@ class Fechas
 
 					$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 
-					$consulta =$objetoAccesoDato->RetornarConsulta("INSERT INTO `fecha`(`lugar`, `fecha`, `direccion`, `precio`) VALUES('$lugar','$fecha','$direccion','$precio')");
+					$consulta =$objetoAccesoDato->RetornarConsulta("INSERT INTO `fecha`(`lugar`, `fecha`, `direccion`, `precio`, `descripcion`) VALUES('$lugar','$fecha','$direccion','$precio','$descripcion')");
 					$consulta->execute();
 					return $objetoAccesoDato->RetornarUltimoIdInsertado();
 
@@ -58,17 +59,18 @@ class Fechas
 	 }
 
 
-	 public static function Modificarfecha($idfecha, $lugar,$fecha,$direccion,$precio)
+	 public static function Modificarfecha($idfecha, $lugar,$fecha,$direccion,$precio,$descripcion)
 	 {
 				$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 				//$consulta =$objetoAccesoDato->RetornarConsulta("UPDATE 'fechas' set estado=:estado where patente=:patente");
-				$consulta =$objetoAccesoDato->RetornarConsulta("UPDATE `fecha` SET `lugar`=:lugar , `fecha`=:fecha, `direccion`=:direccion , `precio`=:precio where idfecha=:idfecha");
+				$consulta =$objetoAccesoDato->RetornarConsulta("UPDATE `fecha` SET `lugar`=:lugar , `fecha`=:fecha, `direccion`=:direccion , `precio`=:precio , `descripcion`=:descripcion where idfecha=:idfecha");
 
 				$consulta->bindValue(':idfecha',$idfecha, PDO::PARAM_INT);
 				$consulta->bindValue(':lugar',$lugar, PDO::PARAM_INT);
 				$consulta->bindValue(':fecha',$fecha, PDO::PARAM_INT);
 				$consulta->bindValue(':direccion',$direccion, PDO::PARAM_INT);
 				$consulta->bindValue(':precio',$precio, PDO::PARAM_INT);
+				$consulta->bindValue(':descripcion',$descripcion, PDO::PARAM_INT);
 				$consulta->execute();		
 				//return $objetoAccesoDato->RetornarUltimoIdInsertado();
 	 }
@@ -78,7 +80,7 @@ class Fechas
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
 		//$consulta=$objetoAccesoDato->RetornarConsulta("select patente, marca,color,estado from fechas");
 		//$consulta=$objetoAccesoDato->RetornarConsulta("SELECT * FROM `fechas`");
-		$consulta=$objetoAccesoDato->RetornarConsulta("SELECT `idFecha`, `lugar`, `fecha`, `direccion`, `precio` FROM `fecha`");
+		$consulta=$objetoAccesoDato->RetornarConsulta("SELECT `idFecha`, `lugar`, `fecha`, `direccion`, `precio`, `descripcion` FROM `fecha`");
 		$consulta->execute();
 		//var_dump($consulta->fetchall(PDO::FETCH_CLASS,"fecha"));
 		return $consulta->fetchall(PDO::FETCH_CLASS,"Fechas");
@@ -89,7 +91,7 @@ class Fechas
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
 		//$consulta=$objetoAccesoDato->RetornarConsulta("select patente, marca,color,estado from fechas");
 		//$consulta=$objetoAccesoDato->RetornarConsulta("SELECT * FROM `fechas`");
-		$consulta=$objetoAccesoDato->RetornarConsulta("SELECT `idFecha`, `lugar`, `fecha`, `direccion`, `precio` FROM `fecha` WHERE idfecha=:idfecha");
+		$consulta=$objetoAccesoDato->RetornarConsulta("SELECT `idFecha`, `lugar`, `fecha`, `direccion`, `precio`, `descripcion` FROM `fecha` WHERE idfecha=:idfecha");
 	    $consulta->bindValue(':idfecha',$idfecha, PDO::PARAM_INT);
 		$consulta->execute();
 		//($consulta->fetchall(PDO::FETCH_CLASS,"fecha"));

@@ -3,15 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
-<title>Inefables Demo</title>
+<title>Inefables</title>
   
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700'>
 
-<link rel="stylesheet" href="css/foundation.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-<script type="text/javascript" src="FuncionesJS.js"></script>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
+<script type="text/javascript" src="js/FuncionesJS.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet prefetch' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/css/foundation.min.css"/>
 <link href="https://fonts.googleapis.com/css?family=Lilita+One" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Kelly+Slab" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
@@ -24,10 +26,18 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/animated.css">
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
 <style text="text/javascript">
 
     body { 
-           background-image: url("imagenes/fondoComp.jpg");
+           background-image: url("imagenes/fondoF2.jpg");
            background-size: 100% ;
          }
     .full {  
@@ -76,7 +86,8 @@
 
 <body onload="OnLoad()" class="body">
 <!-- Navbar -->
-<button id="nav-toggle" class="menu-fixed"></button>
+<div class="navbar-fixed-top">
+<button id="nav-toggle" class="menu-fixed" style="size: 10%;"></button>
 
 <nav id="navDemo" onclick="myFunction()">
   <a href="#biografia"><i class="fa fa-file-text"></i></a>
@@ -84,10 +95,12 @@
   <a href="#galeria"><i class="fa fa-file-photo-o"></i></a>
   <a href="#contacto"><i class="fa fa-info"></i></a>
 </nav>
-
+</div>
 <div  class="full" align="center">
+
+<img src='imagenes/ine.gif' height='20%' width='40%'  style="float:right;">
   <br><br><br><br>
-  <img src="imagenes/asset/Asset 2.png" height='30%' width='50%' class=" animated infinite pulse" />
+<img src='imagenes/yallega.gif' style="margin-left: 5%;" height='30%' width='50%' class="animated infinite pulse" style="animation-delay: 0.9s;">
   <img src="imagenes/asset/Asset 5.png" height='5%' width='15%' class=" animated infinite pulse" style="animation-delay: 0.3s;"/>
 </div>
 <!-- Cargar secciones -->
@@ -107,8 +120,10 @@
 <div class="w3-medium" id='shows' >
 <br><br><br><br>
 
-<img src='imagenes/shows.png' height='50%' width='70%' class="animated infinite pulse" style="float:right;">
+<img src='imagenes/shows.png' height='50%' width='70%' class="animated infinite pulse">
+<br>
 
+<div class='row'>
   <?php
   require_once "php\\fechas.php";
   $fechas = Fechas::TraerTodosLasFechas();
@@ -120,18 +135,28 @@
     $fdate = date_format($date, 'd/m/y');
     $ftime = date_format($date, 'g:i A');
 
-echo "
-<div class='row'>
-<div class='panel'data-animate-scroll='{'x': '-100','y': '0', 'alpha': '0', 'duration': '1.5'}'>
-<h2><b>$fec->lugar</b></h2>
-<p><br>Entrada $$fec->precio</p>
-<p>$fec->direccion</p>
-<p>$fdate - $ftime</p>
-<img src='imagenes\Fechas\\$fec->idFecha.jpg' alt='Foto' height='588' width='588' style='opacity: 1;'>
-</div>
-</div>";
+    echo "
+<br><article class='card'>
+  <header class='card__thumb'>
+    <img src='imagenes\Fechas\\$fec->idFecha.jpg'>
+  </header>
+  <date class='card__date'>
+    <span class='card__date__day'>$fdate</span>
+    <br/>
+    <span class='card__date__month'>$fdate</span>
+  </date>
+  
+  <div class='card__body'>
+    <div class='card__category'><a href='#'>$fec->lugar</a></div>
+    <h2 class='card__title'><a href='#'>Descrip 1</a></h2>
+    <div class='card__subtitle'></div>
+    <p class='card__description'>$fec->descripcion<br>$ $fec->precio<br>$fec->direccion</p>
+  </div>
+  
+</article>";
 }
 ?>
+</div>
 </div>
 
 <div class="row" id='galeria'>
@@ -237,11 +262,15 @@ echo "
 
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/js/foundation.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/plugins/ScrollToPlugin.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/plugins/EaselPlugin.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-core.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-css.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-markup.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism-okaidia.min.css" media="screen" rel="stylesheet" type="text/css">
+
 <script src="animate-scroll.js"></script>
 
 <script>

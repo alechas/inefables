@@ -107,7 +107,8 @@ switch ($queHago) {
             setcookie("LugarMOD", $fc[0]->lugar, time() + (86400 * 30), "/");          
             setcookie("FechaMOD", $fc[0]->fecha, time() + (86400 * 30), "/");          
             setcookie("DireMOD", $fc[0]->direccion, time() + (86400 * 30), "/");          
-            setcookie("PrecioMOD", $fc[0]->precio, time() + (86400 * 30), "/");          
+            setcookie("PrecioMOD", $fc[0]->precio, time() + (86400 * 30), "/");
+            setcookie("DescripcionMOD", $fc[0]->descripcion, time() + (86400 * 30), "/");          
 
             break;
 
