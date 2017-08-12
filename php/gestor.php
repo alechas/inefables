@@ -48,7 +48,7 @@
 					<div align = 'center' style='background-color:#fb9fcd class='w3-container w3-center w3-animate-bottom ' id='biografia2'>
 					  <div class='w3-content' align = 'center'>
 					    <div id='biografia' align = 'center'>
-					    <img src='imagenes/biografia.png' height='70%' width='90%' class=' animated infinite swing'>
+					    <img src='imagenes/biografia.png' width=650px class=' animated infinite swing'>
 					      <div style='border-radius: 8px; width:80%' align = 'center' > 
 					      				
 <br><br>

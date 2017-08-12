@@ -2,6 +2,9 @@
 <html class="no-js" lang="es" >
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="description" content="animate-scroll demo page"/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>Inefables</title>
   
@@ -80,6 +83,7 @@
     font-family: 'Gloria Hallelujah', cursive;
     font-size: 300%;
     }
+
 </style>
 
 </head>
@@ -117,13 +121,12 @@
     ?>
 </div>
 
-<div class="w3-medium" id='shows' >
+<div id='shows' >
 <br><br><br><br>
 
-<img src='imagenes/shows.png' height='50%' width='70%' class="animated infinite pulse">
-<br>
+<img src='imagenes/shows.png'  width=650px style="z-index: 1;" class="animated infinite pulse">
+<br><br>
 
-<div class='row'>
   <?php
   require_once "php\\fechas.php";
   $fechas = Fechas::TraerTodosLasFechas();
@@ -136,7 +139,7 @@
     $ftime = date_format($date, 'g:i A');
 
     echo "
-<br><article class='card'>
+<br><div class='card'>
   <header class='card__thumb'>
     <img src='imagenes\Fechas\\$fec->idFecha.jpg'>
   </header>
@@ -153,15 +156,14 @@
     <p class='card__description'>$fec->descripcion<br>$ $fec->precio<br>$fec->direccion</p>
   </div>
   
-</article>";
+</div>";
 }
 ?>
-</div>
 </div>
 
 <div class="row" id='galeria'>
 <br>
-<img src='imagenes/galeria.png' height='50%' width='70%' class=" animated infinite swing"  style="animation-delay: 0.3s;">
+<img src='imagenes/galeria.png' width=650px class=" animated infinite swing"  style="animation-delay: 0.3s;">
 
 <br>
 
@@ -171,9 +173,6 @@
 // Collecto los efectos
 
 //$efectos = Fechas::GetEfectos();
-    $size = array("80", "40", "50");
-    $delay = array('1','4','7','9','1.3');
-
     $directory="imagenes\Galeria";
     $dirint = dir($directory);
     $cont = 0;
@@ -182,73 +181,80 @@
       if($archivo == '.' || $archivo == '..')
         continue;
 
-//$efecto = array_rand($efectos,1);
-//var_dump($efectos);
 
     $imgf = $directory.'\\'.$archivo;
     $cont++;
+            setcookie("imagen", $imgf, time() - (86400 * 30), "/"); 
 
-    $aux = $delay[rand(0,4)];
-    echo " ";
-    $delay_act = "animation-delay: $aux"."s;";
-    
-    //$delay_act = "animation-delay: $delay".[rand(0,4)]."s;";
-    $index_img = rand(0,2);
-    $size_img = $size[$index_img];
-    //echo $size_img;
+            setcookie("imagen", $imgf, time() + (86400 * 30), "/"); 
 
-    //Valido que no se repita delay
-    while ( $index_img == $index_anterior) 
-    {
-      $index_img = rand(0,2);
-    }
-    $index_anterior = $index_img;
+$pagina_inicio = file_get_contents('CodAnim/'.rand(1, 5).'.php');
+//$página_inicio2 = "x";
+echo str_replace("xxx", $imgf, $pagina_inicio);
+//$página_inicio2 = str_replace("xxx", $imgf, $pagina_inicio);
+//echo $pagina_inicio2;
+//var_dump($pagina_inicio2);
+// echo "
+// <div class='row'>";
+// echo "
+// <div class='large-4 columns'>
+// <div class='panel' data-animate-scroll='{'scaleX': '0.1',
+//                     'scaleY': '0.1',
+//                     'rotation': '-360', 
+//                     'alpha': '0', 
+//                     'duration': '2'}'>
+//                     <p>
+//                     <img src='$imgf'  data-animate-scroll='{'rotation': '940', 
+//                     'alpha': '0', 
+//                     'duration".":".' 2'."}"."/>
+// </p>
+// </div>
+// </div>
+// </div>";
+//     echo "<div>";
 
-    echo "<div>";
+//     //Cargo imagen con distintos delay
+//     switch ($index_img) {
+//       case 0:
+//       if($size_img == 0)
+//       echo "
+// <img style='animation-delay: 0.3s; border-radius: 20px; width:$size_img%' data-animate-scroll='animated infinite rubberBand' src='$imgf' class='animated infinite pulse' />
+// ";
+//       else
+//               echo "
 
-    //Cargo imagen con distintos delay
-    switch ($index_img) {
-      case 0:
-      if($size_img == 0)
-      echo "
-<img style='animation-delay: 0.3s; border-radius: 20px; width:$size_img%' data-animate-scroll='animated infinite rubberBand' src='$imgf' class='animated infinite pulse' />
-";
-      else
-              echo "
+// <img style='animation-delay: 0.3s; border-radius: 20px; width:$size_img%' data-animate-scroll='animated infinite rubberBand' src='$imgf' class='animated infinite pulse' />
+// ";
 
-<img style='animation-delay: 0.3s; border-radius: 20px; width:$size_img%' data-animate-scroll='animated infinite rubberBand' src='$imgf' class='animated infinite pulse' />
-";
-
-        break;
+//         break;
       
-      case 1:
+//       case 1:
 
-      echo "
+//       echo "
 
-<img style='animation-delay: 0.5s; border-radius: 20px; width:$size_img%' data-animate-scroll='animated infinite rubberBand' src='$imgf' class='animated infinite pulse' />
-";
-        break;
-      case 2:
-      echo "
+// <img style='animation-delay: 0.5s; border-radius: 20px; width:$size_img%' data-animate-scroll='animated infinite rubberBand' src='$imgf' class='animated infinite pulse' />
+// ";
+//         break;
+//       case 2:
+//       echo "
 
-<img style='animation-delay: 0.9s; border-radius: 20px; width:$size_img%' data-animate-scroll='animated infinite rubberBand' src='$imgf' class='animated infinite pulse' />
-";
-        break;
-    }
+// <img style='animation-delay: 0.9s; border-radius: 20px; width:$size_img%' data-animate-scroll='animated infinite rubberBand' src='$imgf' class='animated infinite pulse' />
+// ";
+//         break;
+//     }
 
-    echo "</div>";
+//     echo "</div>";
 
     }
     $dirint->close();
 ?>
-
 </div>
 
 
 <div id="escuchanos">
 <div class=" animated infinite pulse">
 <br>
-<img src='imagenes/escuchanos.png' height='50%' width='70%' class=" animated infinite rubberBand" style="margin-top: 15px margin-left: 15px; float:left;" >
+<img src='imagenes/escuchanos.png' width=650px class=" animated infinite rubberBand" style="margin-top: 15px margin-left: 15px; float:left;" >
 </div>
 <br>
   <div id="container_player">

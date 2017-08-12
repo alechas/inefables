@@ -211,15 +211,9 @@ article
 {
 
 }
-.card {
-  margin-left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0);
-          transform: translateX(-50%) translateY(-50%) translateZ(0);
-  width: 370px;
+.card { 
+  width: 670px;
   background-color: #fff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  -webkit-transition: box-shadow 0.5s;
   transition: box-shadow 0.5s;
 }
 .card a {
@@ -291,7 +285,7 @@ article
 **/
 .card__body {
   position: relative;
-  height: 185px;
+  height: 85px;
   padding: 20px;
   -webkit-transition: height 0.5s;
   transition: height 0.5s;
