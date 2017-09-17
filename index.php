@@ -196,7 +196,7 @@
     <!-- VIDEO -->
 	<div id="video" width="70%" height="90%" style="background: radial-gradient(#fff 80%, #dfdfdf 90%, #d5d6d6 99%);">
 	<br>
-	<iframe width="70%" height="90%" src="https://www.youtube.com/embed/S7TGPth_OBY?rel=0" frameborder="0" allowfullscreen style="-webkit-box-shadow: 5px 19px 100px -10px rgba(0,0,0,0.75);
+	<iframe width="70%" height="90%" src="https://www.youtube.com/watch?v=leVJsqsYlno" frameborder="0" allowfullscreen style="-webkit-box-shadow: 5px 19px 100px -10px rgba(0,0,0,0.75);
 -moz-box-shadow: 5px 19px 100px -10px rgba(0,0,0,0.75);
 box-shadow: 5px 19px 100px -10px rgba(0,0,0,0.75);
 "></iframe>

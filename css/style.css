@@ -265,7 +265,9 @@ article
 * THUMB
 **/
 .card__thumb {
-  height: 245px;
+  /**height: 245px;**/
+  height: 80%;
+  width: 100%;
   overflow: hidden;
   background-color: #000;
   -webkit-transition: height 0.5s;
@@ -386,6 +388,7 @@ article
 
 
 html .card, body .card {
+	height: 80%;
   position: relative;
   margin: 0 auto;
   border-radius: 10px;
