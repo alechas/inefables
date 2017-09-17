@@ -805,10 +805,10 @@ $color: coral;
 .card {
   transform :  translateX(-50%) translateY(-50%) translateZ(0);
   
-  width:370px;
+  width:70%;
   
   background-color: #fff;
-  box-shadow:0 0 20px rgba(black,0.1);
+  box-shadow:0 0 20px rgba(#fff,0.1);
   
   overflow:hidden;
   
@@ -821,7 +821,7 @@ $color: coral;
 }
 
 .card:hover{
-  box-shadow:0 0 50px rgba(black,0.3);
+  box-shadow:0 0 50px rgba(#fff,0.3);
 }
 
 
@@ -985,3 +985,43 @@ $color: coral;
     padding-left:10px;
   }
 }
+
+
+.nav {
+	background: white;
+	text-align: center;
+	border-top: 5px solid;
+	width: 150px;
+	margin: 0 auto;
+	position: fixed;
+	top: 0; left: 2em;
+	transform: translate3D(0, -95%, 0); // push the nav off-screen
+	transition: transform .5s cubic-bezier(.5, 0, 0, 1.5);
+	filter: drop-shadow(0 .15em .1em rgba(0,0,0,.25));
+
+  &:hover { transform: translate3D(0, 0, 0); }
+  
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+
+  &::before { // if you don't know why this is here, change the background
+    background: hsl(150, 75%, 50%);
+    width: 100%;
+    height: 15%;
+    top: -15%;
+  }
+
+  &::after{
+    top: 100%;
+    border-width: 30px 75px 0 75px; // omg hipster triangle in here!
+    border-color: white transparent;
+    border-style: solid;
+  }
+}
+
+.nav ul { list-style: none; padding: 0; }
+.nav ul li { padding: 10px 0; }

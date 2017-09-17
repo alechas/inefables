@@ -1,7 +1,7 @@
 <?php
 
-require_once"php/usuarios.php";
-require_once"php/Fechas.php";
+require_once getcwd()."/php/usuarios.php";
+require_once getcwd()."/php/Fechas.php";
 
 $queHago = isset($_POST['queHago']) ? $_POST['queHago'] : NULL;
 
@@ -77,9 +77,8 @@ switch ($queHago) {
 
         case "CargarFecha":
 
-            echo  Fechas::Insertarfecha($_POST['lugar'],$_POST['fecha'],$_POST['direccion'],$_POST['precio']);
+            echo  Fechas::Insertarfecha($_POST['lugar'],$_POST['fecha'],$_POST['direccion'],$_POST['precio'],$_POST['link_lugar']);
             
-
         break;
 
         case "CargarImagen":
@@ -109,6 +108,7 @@ switch ($queHago) {
             setcookie("DireMOD", $fc[0]->direccion, time() + (86400 * 30), "/");          
             setcookie("PrecioMOD", $fc[0]->precio, time() + (86400 * 30), "/");
             setcookie("DescripcionMOD", $fc[0]->descripcion, time() + (86400 * 30), "/");          
+            setcookie("Link_FechaMOD", $fc[0]->link_fecha, time() + (86400 * 30), "/");          
 
             break;
 

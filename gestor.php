@@ -1,4 +1,10 @@
+<!DOCTYPE html "-//W3C//DTD HTML 3.2//EN">
+<html>
+<title>Demo Inefables</title>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+
 <?php
+
 
 	/**
 	Clase de carga de botones
@@ -8,6 +14,7 @@
 		
 		public static function CargarSecciones()
 		{
+			echo "gestor";
 			Gestor::SecBiografia();
 			//Gestor::SecFechas();
 
@@ -39,13 +46,13 @@
 		public static function SecBiografia()
 		{
 			echo "
-					<div align = 'center' height=600px class='w3-container w3-center w3-animate-bottom' style='background: radial-gradient(#fff 50%, #dfdfdf 90%, #d5d6d6 99%);' id='biografia2' >
-					  <div class='w3-content' align = 'center' height=600px>
-					    <div id='biografia' align = 'center' height=600px>
+					<div align = 'center' style='background-color:#fb9fcd class='w3-container w3-center w3-animate-bottom ' id='biografia2'>
+					  <div class='w3-content' align = 'center'>
+					    <div id='biografia' align = 'center'>
 					    <img src='imagenes/biografia.png' width=650px class=' animated infinite swing'>
-					      <div height=550px style='border-radius: 8px; width:80%' align = 'center' > 
+					      <div style='border-radius: 8px; width:80%' align = 'center' > 
 					      				
-
+<br><br>
  
 					      	<b id='biog'>";
 
@@ -65,7 +72,7 @@
 				// }
 				////echo $contenido; // Mostras el contenido del txt en el textarea
 
-			echo "     </b> <br><br><br><br><br>
+			echo "     </b>
 					      </div>
 					    </div>
 					  </div>

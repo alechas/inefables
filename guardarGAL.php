@@ -1,6 +1,6 @@
 <?php
 
-require_once"php/Fechas.php";
+require_once getcwd()."/php/Fechas.php";
 
 $valid_file = true;
 

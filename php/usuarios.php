@@ -31,6 +31,7 @@
 			//var_dump($ficheroStr);
 
 			$a = fopen('./archivos/usuarios.txt', "r");
+			//$a = fopen('/home/u638809628/public_html/archivos/usuarios.txt', "r");
 
 			// $arr = explode("-", fgets($a));
 

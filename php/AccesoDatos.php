@@ -11,7 +11,7 @@ class AccesoDatos
             //$this->objetoPDO = new PDO('mysql:host=mysql.tuars.com;dbname=u725565040_chas;charset=utf8', 'u725565040_chas', '123456', array(PDO::ATTR_EMULATE_PREPARES => false,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
             // Local
-            $this->objetoPDO = new PDO('mysql:host=localhost;dbname=inefables;charset=utf8', 'root', '', array(PDO::ATTR_EMULATE_PREPARES => false,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $this->objetoPDO = new PDO('mysql:host=mysql.hostinger.com.ar;dbname=u638809628_inefa;charset=utf8', 'u638809628_chas', 'Lalala123', array(PDO::ATTR_EMULATE_PREPARES => false,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
             // Hostinger
             //$this->objetoPDO = new PDO('mysql:host=mysql.hostinger.com.ar;dbname=u249622730_tp;charset=utf8','u249622730_ale','lalala123', array(PDO::ATTR_EMULATE_PREPARES => false,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));

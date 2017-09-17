@@ -14,6 +14,7 @@ function CargarAdministrador()
       ).then( 
         function(respuesta) 
         { 
+		alert(respuesta);
 
           if (respuesta == "ok") 
             {
@@ -23,9 +24,8 @@ function CargarAdministrador()
             {
                 $("#container_admin").load("frmLogin.php");
             }
-
         }, 
-        function(respuesta) 
+        function(respuesta)
         { 
         }
       );

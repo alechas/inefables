@@ -31,7 +31,7 @@
 <form action="guardar.php" method="post" enctype="multipart/form-data">
 
 <?php
-require_once"php/Fechas.php";
+require_once getcwd()."/php/Fechas.php";
 
         $lugar = "";
         $fecha = "";
@@ -64,6 +64,7 @@ echo "
 <input type='text' id='direccion' placeholder= 'Dirección' name='direccion' $direccion>
 <input type='number' id='precio' placeholder= 'Precio' name='precio' $precio >
 <input type='text' id='descripcion' placeholder= 'Descripción' name='descripcion' $descripcion>
+<input type='text' id='link_lugar' placeholder= 'Link Lugar' name='link_lugar' $link_lugar>
 
 <input type='file' name='fileImg' id='fileImg'>
 
@@ -94,6 +95,7 @@ echo "
           <th align="center">Dirección</th>
           <th align="center">Precio</th>
           <th align="center">Descripción</th>
+          <th align="center">Link Lugar</th>
           <th align="center"></th>
           <th align="center"></th>
         </tr> 
@@ -122,6 +124,7 @@ echo "
             <td align='center'>$fec->direccion</td>
             <td align='center'>$fec->precio</td>
             <td align='center'>$fec->descripcion</td>
+            <td align='center'>$fec->link_lugar</td>
             <td align='center'><button onclick='BorrarFecha($fec->idFecha)' class='w3-button w3-round w3-red w3-hover-blue w3-opacity w3-hover-opacity-off' style='padding:3px 10px'>Eliminar</button>
             <button onclick='ModFecha($fec->idFecha)' class='w3-button w3-round w3-green w3-opacity w3-hover-blue w3-hover-opacity-off' style='padding:3px 10px'>Modificar</button></td>
           </tr>

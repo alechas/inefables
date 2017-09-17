@@ -1,6 +1,7 @@
 <?php
 
-require_once"AccesoDatos.php";
+//require_once"AccesoDatos.php";
+require_once"/home/u638809628/public_html/php/AccesoDatos.php";
 
 class Fechas
 {
@@ -9,8 +10,9 @@ class Fechas
 	public $fecha;
 	public $direccion;
 	public $precio;
+	public $titulo;
 	public $descripcion;
-
+	public $link_lugar;
 		public static function GetIdFecha()
 		{
 			return Fechas::$idFecha;
@@ -31,6 +33,14 @@ class Fechas
 		{
 			return Fechas::$precio;
 		}
+		public static function GetTitulo()
+		{
+			return Fechas::$titulo;
+		}
+		public static function GetDescripcion()
+		{
+			return Fechas::$descripcion;
+		}
 
 	public static function Insertarfecha($lugar,$fecha,$direccion,$precio)
 	 {
@@ -38,7 +48,7 @@ class Fechas
 
 					$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 
-					$consulta =$objetoAccesoDato->RetornarConsulta("INSERT INTO `fecha`(`lugar`, `fecha`, `direccion`, `precio`, `descripcion`) VALUES('$lugar','$fecha','$direccion','$precio','$descripcion')");
+					$consulta =$objetoAccesoDato->RetornarConsulta("INSERT INTO `fecha`(`lugar`, `fecha`, `direccion`, `precio`, `descripcion`, `titulo`) VALUES('$lugar','$fecha','$direccion','$precio','$descripcion','$titulo')");
 					$consulta->execute();
 					return $objetoAccesoDato->RetornarUltimoIdInsertado();
 
@@ -59,11 +69,11 @@ class Fechas
 	 }
 
 
-	 public static function Modificarfecha($idfecha, $lugar,$fecha,$direccion,$precio,$descripcion)
+	 public static function Modificarfecha($idfecha, $lugar,$fecha,$direccion,$precio,$descripcion,$titulo)
 	 {
 				$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 				//$consulta =$objetoAccesoDato->RetornarConsulta("UPDATE 'fechas' set estado=:estado where patente=:patente");
-				$consulta =$objetoAccesoDato->RetornarConsulta("UPDATE `fecha` SET `lugar`=:lugar , `fecha`=:fecha, `direccion`=:direccion , `precio`=:precio , `descripcion`=:descripcion where idfecha=:idfecha");
+				$consulta =$objetoAccesoDato->RetornarConsulta("UPDATE `fecha` SET `lugar`=:lugar , `fecha`=:fecha, `direccion`=:direccion , `precio`=:precio , `descripcion`=:descripcion , `titulo`=:titulo where idfecha=:idfecha");
 
 				$consulta->bindValue(':idfecha',$idfecha, PDO::PARAM_INT);
 				$consulta->bindValue(':lugar',$lugar, PDO::PARAM_INT);
@@ -71,6 +81,7 @@ class Fechas
 				$consulta->bindValue(':direccion',$direccion, PDO::PARAM_INT);
 				$consulta->bindValue(':precio',$precio, PDO::PARAM_INT);
 				$consulta->bindValue(':descripcion',$descripcion, PDO::PARAM_INT);
+				$consulta->bindValue(':titulo',$titulo, PDO::PARAM_INT);
 				$consulta->execute();		
 				//return $objetoAccesoDato->RetornarUltimoIdInsertado();
 	 }
@@ -80,7 +91,7 @@ class Fechas
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
 		//$consulta=$objetoAccesoDato->RetornarConsulta("select patente, marca,color,estado from fechas");
 		//$consulta=$objetoAccesoDato->RetornarConsulta("SELECT * FROM `fechas`");
-		$consulta=$objetoAccesoDato->RetornarConsulta("SELECT `idFecha`, `lugar`, `fecha`, `direccion`, `precio`, `descripcion` FROM `fecha`");
+		$consulta=$objetoAccesoDato->RetornarConsulta("SELECT `idFecha`, `lugar`, `fecha`, `direccion`, `precio`, `descripcion`, `titulo` FROM `fecha`");
 		$consulta->execute();
 		//var_dump($consulta->fetchall(PDO::FETCH_CLASS,"fecha"));
 		return $consulta->fetchall(PDO::FETCH_CLASS,"Fechas");
@@ -91,7 +102,7 @@ class Fechas
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
 		//$consulta=$objetoAccesoDato->RetornarConsulta("select patente, marca,color,estado from fechas");
 		//$consulta=$objetoAccesoDato->RetornarConsulta("SELECT * FROM `fechas`");
-		$consulta=$objetoAccesoDato->RetornarConsulta("SELECT `idFecha`, `lugar`, `fecha`, `direccion`, `precio`, `descripcion` FROM `fecha` WHERE idfecha=:idfecha");
+		$consulta=$objetoAccesoDato->RetornarConsulta("SELECT `idFecha`, `lugar`, `fecha`, `direccion`, `precio`, `descripcion`, `titulo` FROM `fecha` WHERE idfecha=:idfecha");
 	    $consulta->bindValue(':idfecha',$idfecha, PDO::PARAM_INT);
 		$consulta->execute();
 		//($consulta->fetchall(PDO::FETCH_CLASS,"fecha"));
@@ -109,73 +120,6 @@ class Fechas
 	// 	//var_dump($consulta->fetchall(PDO::FETCH_CLASS,"fecha"));
 	// 	return $consulta->fetchall(PDO::FETCH_CLASS,"fecha");
 	// }
-
-	public static function GetEfectos()
-	{
-		$efectos = array(
-			"<div class='panel' data-animate-scroll='{'alpha': '0',
-                    'y':'50', 
-                    'duration': '1.75',
-                    'scaleX': '0',
-                    'scaleY': '0',
-                    'ease': 'Elastic.easeIn'}'>"
-,
-"<div class='panel' data-animate-scroll='{'x': '100',
-                    'y': '0', 
-                    'alpha': '0', 
-                    'duration': '.5'}'>"
-,
-"<h5 data-animate-scroll='{'x': '-20', 
-                    'alpha': '0', 
-                    'duration': '1.5'}'>Panel Title</h5>"
-,
-"<div class='panel' data-animate-scroll='{'x': '-300', 
-                    'y': '-200', 
-                    'scaleX': '0.85',
-                    'scaleY': '0.85', 
-                    'alpha': '0', 
-                    'duration': '2',
-                    'rotationY':'720',
-                    'rotationX':'45',
-                    'rotation':'45',
-                    'z':'-30'}'>"
-,
-"<div class='panel' data-animate-scroll='{'x': '100', 
-                    'y':'100',
-                    'rotation':'-25',
-                    'alpha': '0', 
-                    'duration': '1.5',
-                    'scaleX': '0',
-                    'scaleY': '0'}'>"
-,					
-"<div class='panel' data-animate-scroll='{'scaleX': '0.1',
-                    'scaleY': '0.1',
-                    'rotation': '-360', 
-                    'alpha': '0', 
-                    'duration': '2'}'>"
-
-,
-"<div class='panel' data-animate-scroll='{'alpha': '0', 
-                    'duration': '2',
-                    'rotationX':'45',
-                    'rotationY':'-45',
-                    'z':'-30'}'>"
-,
-"<div class='panel' data-animate-scroll='{'alpha': '0', 
-                    'duration': '2',
-                    'rotationX':'45',
-                    'z':'-30'}'>"
-,
-"<div class='panel' data-animate-scroll='{'alpha': '0', 
-                    'duration': '2',
-                    'rotationY':'45',
-                    'z':'-30'}'>"
-
-					
-					);
-
-		return $efectos;
-	}
 
 }
 ?>

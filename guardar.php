@@ -1,13 +1,13 @@
 <?php
 
-require_once"php/Fechas.php";
+require_once getcwd()."/php/Fechas.php";
 
 echo "<br> file <br>";
 
       if (isset($_COOKIE['IdFechaMOD']))
-		Fechas::Modificarfecha($_COOKIE['IdFechaMOD'],$_POST['lugar'],$_POST['fecha'],$_POST['direccion'],$_POST['precio'],$_POST['descripcion']);
+		Fechas::Modificarfecha($_COOKIE['IdFechaMOD'],$_POST['lugar'],$_POST['fecha'],$_POST['direccion'],$_POST['precio'],$_POST['descripcion'],,$_POST['link_fecha']);
 	  else
-	  	$id = Fechas::Insertarfecha($_POST['lugar'],$_POST['fecha'],$_POST['direccion'],$_POST['precio'],$_POST['descripcion']);
+	  	$id = Fechas::Insertarfecha($_POST['lugar'],$_POST['fecha'],$_POST['direccion'],$_POST['precio'],$_POST['descripcion'],$_POST['link_fecha']);
         
 setcookie("IdFechaMOD", $_POST['id'], time() - (86400 * 30), "/");          
 setcookie("LugarMOD", $_POST['lugar'], time() - (86400 * 30), "/");          
@@ -15,6 +15,7 @@ setcookie("FechaMOD", $_POST['fecha'], time() - (86400 * 30), "/");
 setcookie("DireMOD", $_POST['direccion'], time() - (86400 * 30), "/");          
 setcookie("PrecioMOD", $_POST['precio'], time() - (86400 * 30), "/");          
 setcookie("DescripcionDES", $_POST['descripcion'], time() - (86400 * 30), "/");          
+setcookie("Link_fechaMOD", $_POST['link_fecha'], time() - (86400 * 30), "/");          
 
 $valid_file = true;
 
