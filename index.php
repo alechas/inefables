@@ -257,20 +257,18 @@ echo str_replace("xxx", $imgf, $pagina_inicio);
 </div>
 </body>
 <footer width="100%" height="100%">
-  <div align="center">
-		<a align="center" height='75px' width='75px' href="https://www.facebook.com/InefablesRock/?fref=ts">
-		  <img style="margin-left:35%;" src='imagenes/footer/facebook.png' height='75px' width='75px'  style="float:right;">
+		<a href="https://www.facebook.com/InefablesRock/?fref=ts">
+		  <img style="margin-left:7%;" src='imagenes/footer/facebook.png' width='10%'  style="float:right;">
 		</a>
     <a href="https://twitter.com/MusicaInefables" target="_blank">
-		<img style="margin-left:2%;" src='imagenes/footer/twitter.png' height='75px' width='75px'  style="float:right;">
+		<img style="margin-left:2%;" src='imagenes/footer/twitter.png' width='10%'  style="float:right;">
 	</a>
     <a href="https://www.instagram.com/inefablesmusica/" target="_blank">
-		<img style="margin-left:2%;" src='imagenes/footer/instragram.png' height='75px' width='75px'  style="float:right;">
+		<img style="margin-left:2%;" src='imagenes/footer/instragram.png' width='10%'  style="float:right;">
 	</a>
     <a href="https://www.spotify.com" target="_blank">
-		<img style="margin-left:2%;" src='imagenes/footer/spotify.ico' height='75px' width='75px'  style="float:right;">
+		<img style="margin-left:2%;" src='imagenes/footer/spotify.ico' width='10%'  style="float:right;">
 	</a>
-  </div>
 </footer>
 
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

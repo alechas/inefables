@@ -954,7 +954,8 @@ html .card .slide-up i:hover, body .card .slide-up i:hover {
 .flickr:hover{
   background-color:#FF0084;
 }
-footer {
+footer 
+{
   background: transparent;
   bottom: 0;
   left: 0;
