@@ -66,6 +66,7 @@
 				////echo $contenido; // Mostras el contenido del txt en el textarea
 
 			echo "     </b> <br><br><br><br><br>
+<br><br><br>
 					      </div>
 					    </div>
 					  </div>

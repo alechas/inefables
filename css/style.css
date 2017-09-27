@@ -807,7 +807,7 @@ html .card .slide-up i:hover, body .card .slide-up i:hover {
 .nav::after {
   top: 100%;
   border-width: 30px 75px 0 75px;
-  border-color: white transparent;
+  border-color: coral transparent;
   border-style: solid;
 }
 
@@ -953,4 +953,13 @@ html .card .slide-up i:hover, body .card .slide-up i:hover {
 
 .flickr:hover{
   background-color:#FF0084;
+}
+footer {
+  background: transparent;
+  bottom: 0;
+  left: 0;
+  padding: 20px 0;
+  position: fixed;
+  right: 0;
+  text-align: center;
 }

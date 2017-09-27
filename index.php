@@ -43,6 +43,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 <style text="text/javascript">
+body,html{
+height:100%; /*Siempre es necesario cuando trabajamos con alturas*/
+}
   @font-face 
   {
     font-family: Badaboom;
@@ -125,7 +128,6 @@
 <body class="body" >
 <!-- Navbar -->
 
-
 <div  class="full" align="center">
 
   <div style="background-image: url(imagenes/fondoF2.jpg);">
@@ -194,6 +196,7 @@
   <!-- Footer -->
 
     <!-- VIDEO -->
+	<!--
 	<div id="video" width="70%" height="90%" style="background: radial-gradient(#fff 80%, #dfdfdf 90%, #d5d6d6 99%);">
 	<br>
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/leVJsqsYlno?rel=0" frameborder="0" allowfullscreen style="-webkit-box-shadow: 5px 19px 100px -10px rgba(0,0,0,0.75);
@@ -204,11 +207,12 @@
 	<br>
 	</div>
 	<!-- VIDEO -->
-  </div>
+
+	</div>
 
 
   <div style="background-image: url(imagenes/fondoF2.jpg);">
-    <div class="row" id='galeria' >
+    <div  id='galeria' >
       <br>
       <img src='imagenes/galeria.png' width=650px class=" animated infinite swing"  style="animation-delay: 0.3s;">
 
@@ -232,7 +236,7 @@
             setcookie("imagen", $imgf, time() + (86400 * 30), "/"); 
 
 $pagina_inicio = file_get_contents('CodAnim/'.rand(1, 5).'.php');
-		echo "<br>";
+		//echo "<br>";
 echo str_replace("xxx", $imgf, $pagina_inicio);
 
           }
@@ -251,11 +255,9 @@ echo str_replace("xxx", $imgf, $pagina_inicio);
 
 </div>
 </div>
-
 </body>
-<div width="100%" height="100%">
-	<p align="center">Inefables Música</p>
-	
+<footer width="100%" height="100%">
+  <div align="center">
 		<a align="center" height='75px' width='75px' href="https://www.facebook.com/InefablesRock/?fref=ts">
 		  <img style="margin-left:35%;" src='imagenes/footer/facebook.png' height='75px' width='75px'  style="float:right;">
 		</a>
@@ -268,12 +270,8 @@ echo str_replace("xxx", $imgf, $pagina_inicio);
     <a href="https://www.spotify.com" target="_blank">
 		<img style="margin-left:2%;" src='imagenes/footer/spotify.ico' height='75px' width='75px'  style="float:right;">
 	</a>
-<br><br><br>
-
-
-
-	  
-</div>
+  </div>
+</footer>
 
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
